@@ -9,7 +9,6 @@ import {
   Smartphone, 
   Globe, 
   Search, 
-  LandPlot 
 } from 'lucide-react'
 import { Button3D } from './ui/Button3D'
 

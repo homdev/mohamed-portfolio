@@ -4,7 +4,7 @@ import AboutSection from "@/components/about-section"
 import { VelocityScroll } from "@/components/ui/scroll-based-velocity"
 import Portfolio from "@/components/portfolio-section"
 import ProcessSection from "@/components/process-section"
-
+import TestimonialsSection from "@/components/testimonials-section"
 export default function Home() {
   return (
     <main className="relative min-h-screen bg-transparent text-white overflow-hidden">
@@ -28,6 +28,7 @@ export default function Home() {
         <AboutSection />
         <Portfolio />
         <ProcessSection />
+        <TestimonialsSection />
       </div>
     </main>
   )
