@@ -10,7 +10,7 @@ const config: Config = {
   theme: {
   	extend: {
   		fontFamily: {
-			'protest': ['var(--font-protest-riot)'],
+  			 'protest': ['var(--font-protest-revolution)'],
   			'archivo': ['var(--font-archivo-black)'],
   		},
   		colors: {
