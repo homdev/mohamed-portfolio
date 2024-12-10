@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Protest_Revolution, Archivo_Black } from 'next/font/google'
+import HackerBackground from "@/components/ui/hackerbg";
 
 const protestRevolution = Protest_Revolution({
   weight: '400',
@@ -28,7 +29,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${protestRevolution.variable} ${archivoBlack.variable}`}>
-      <body>
+      <body className="relative bg-black">
+        <HackerBackground color="#8364FF" fontSize={9} speed={1} className="opacity-1 bg-transparent" />
         {children}
       </body>
     </html>

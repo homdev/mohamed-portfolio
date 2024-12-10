@@ -9,7 +9,7 @@ export default function Navbar() {
     setIsMobileMenuOpen(!isMobileMenuOpen)
   }
   return (
-    <nav className="container mx-auto max-w-7xl fixed top-4 left-4 right-4 z-50 bg-black/80 backdrop-blur-md rounded-full shadow-lg shadow-[#8364FF] ">
+    <nav className="mx-auto max-w-7xl fixed top-4 left-4 right-4 z-50 bg-black/80 backdrop-blur-md rounded-full shadow-lg shadow-[#8364FF] ">
     <div className="container mx-auto px-4 py-4">
       <div className="flex items-center justify-between">
         {/* Mobile menu button (left side) */}
@@ -54,17 +54,17 @@ export default function Navbar() {
 
     {/* Mobile menu */}
     <div 
-      className={`lg:hidden absolute top-full left-0 right-0 mt-2 bg-gray-900 rounded-lg shadow-lg overflow-hidden transition-all duration-300 ease-in-out ${
+      className={`lg:hidden absolute top-full left-0 right-0 mt-2 bg-gray-900 rounded-lg shadow-l shadow-lg overflow-hidden transition-all duration-300 ease-in-out ${
         isMobileMenuOpen ? 'max-h-[500px] opacity-100 translate-y-0' : 'max-h-0 opacity-0 -translate-y-4'
       }`}
     >
       <div className="px-4 py-2 space-y-1">
-        <Link href="#apropos" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800 hover:text-[#C1FF00] transition-colors">À propos</Link>
-        <Link href="#portfolio" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800 hover:text-[#C1FF00] transition-colors">Portfolio</Link>
-        <Link href="#competences" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800 hover:text-[#C1FF00] transition-colors">Compétences</Link>
-        <Link href="#experience" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800 hover:text-[#C1FF00] transition-colors">Expérience</Link>
-        <Link href="#temoignages" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800 hover:text-[#C1FF00] transition-colors">Témoignages</Link>
-        <Link href="#contact" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800 hover:text-[#C1FF00] transition-colors">Contact</Link>
+        <Link href="#apropos" className="font-protest block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800 hover:text-[#C1FF00] transition-colors">À propos</Link>
+        <Link href="#portfolio" className="font-protest block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800 hover:text-[#C1FF00] transition-colors">Portfolio</Link>
+        <Link href="#competences" className="font-protest block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800 hover:text-[#C1FF00] transition-colors">Compétences</Link>
+        <Link href="#experience" className="font-protest block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800 hover:text-[#C1FF00] transition-colors">Expérience</Link>
+        <Link href="#temoignages" className="font-protest block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800 hover:text-[#C1FF00] transition-colors">Témoignages</Link>
+        <Link href="#contact" className="font-protest block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800 hover:text-[#C1FF00] transition-colors">Contact</Link>
       </div>
     </div>
   </nav>
