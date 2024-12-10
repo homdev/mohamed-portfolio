@@ -3,6 +3,8 @@ import Hero from "@/components/Hero"
 import AboutSection from "@/components/about-section"
 import { VelocityScroll } from "@/components/ui/scroll-based-velocity"
 import Portfolio from "@/components/portfolio-section"
+import ProcessSection from "@/components/process-section"
+
 export default function Home() {
   return (
     <main className="relative min-h-screen bg-transparent text-white overflow-hidden">
@@ -25,6 +27,7 @@ export default function Home() {
 
         <AboutSection />
         <Portfolio />
+        <ProcessSection />
       </div>
     </main>
   )

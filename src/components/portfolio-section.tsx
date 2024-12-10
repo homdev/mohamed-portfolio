@@ -11,13 +11,19 @@ import {
   Search, 
   LandPlot 
 } from 'lucide-react'
+import { Button3D } from './ui/Button3D'
 
 export default function PortfolioSection() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
+  const [showAll, setShowAll] = useState(false)
 
   const filteredProjects = selectedCategory
     ? projects.filter(project => project.category === selectedCategory)
     : projects
+
+  const displayedProjects = showAll 
+    ? filteredProjects 
+    : filteredProjects.slice(0, 4)
 
   const categoryIcons = {
     'landing page': <Layout className="w-4 h-4" />,
@@ -32,7 +38,8 @@ export default function PortfolioSection() {
         {/* Title */}
         <motion.h2 
           initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
           transition={{ duration: 0.6 }}
           className="mb-16 text-center text-4xl"
         >
@@ -43,7 +50,8 @@ export default function PortfolioSection() {
         {/* Filter Buttons */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mb-16 relative"
         >
@@ -60,7 +68,8 @@ export default function PortfolioSection() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false }}
                 transition={{ duration: 0.3, delay: index * 0.1 }}
               >
                 {categoryIcons[category as keyof typeof categoryIcons]}
@@ -79,12 +88,13 @@ export default function PortfolioSection() {
           className="grid gap-8 md:grid-cols-2 lg:grid-cols-4"
         >
           <AnimatePresence>
-            {filteredProjects.map((project) => (
+            {displayedProjects.map((project) => (
               <motion.div
                 key={project.id}
                 layout
                 initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: false }}
                 exit={{ opacity: 0, scale: 0.8 }}
                 transition={{ duration: 0.5 }}
                 className="group relative perspective"
@@ -143,6 +153,23 @@ export default function PortfolioSection() {
             ))}
           </AnimatePresence>
         </motion.div>
+
+        {/* Show More Button */}
+        {filteredProjects.length > 4 && (
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="mt-12 text-center"
+          >
+            <Button3D onClick={() => setShowAll(!showAll)}>
+              <span className="font-protest">
+                {showAll ? 'VOIR MOINS' : 'VOIR PLUS'}
+              </span>
+            </Button3D>
+          </motion.div>
+        )}
       </div>
     </section>
   )

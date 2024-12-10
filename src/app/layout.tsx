@@ -30,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${protestRevolution.variable} ${archivoBlack.variable}`}>
       <body className="relative bg-black">
-        <HackerBackground color="#8364FF" fontSize={9} speed={1} className="opacity-1 bg-transparent" />
+        <HackerBackground color="#8364FF" fontSize={8} speed={1} className="opacity-1 bg-transparent" />
         {children}
       </body>
     </html>
