@@ -1,4 +1,5 @@
-import Image from "next/image"
+/* eslint-disable react/no-unescaped-entities */
+
 import Safari from "./ui/safari"
 
 export default function Hero() {
