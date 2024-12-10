@@ -10,8 +10,12 @@ const config: Config = {
   theme: {
   	extend: {
   		fontFamily: {
-  			 'protest': ['var(--font-protest-revolution)'],
-  			'archivo': ['var(--font-archivo-black)'],
+  			protest: [
+  				'var(--font-protest-revolution)'
+  			],
+  			archivo: [
+  				'var(--font-archivo-black)'
+  			]
   		},
   		colors: {
   			background: 'hsl(var(--background))',
@@ -59,6 +63,19 @@ const config: Config = {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
+  		},
+  		animation: {
+  			grid: 'grid 15s linear infinite'
+  		},
+  		keyframes: {
+  			grid: {
+  				'0%': {
+  					transform: 'translateY(-50%)'
+  				},
+  				'100%': {
+  					transform: 'translateY(0)'
+  				}
+  			}
   		}
   	}
   },

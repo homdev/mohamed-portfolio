@@ -34,7 +34,7 @@ const TimelineItem: FC<{
 
 export default function AboutSection() {
   return (
-    <section className="relative bg-black py-24">
+    <section className="relative bg-black py-12">
       <div className="container mx-auto px-4">
         <h2 className="mb-16 text-center relative">
           <span className="font-protest text-[#8364FF] text-6xl block -mb-5 relative z-10">Somthing</span>

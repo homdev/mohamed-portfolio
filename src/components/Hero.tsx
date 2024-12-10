@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 
 import Safari from "./ui/safari"
+import HyperText from "./ui/hyper-text"
 
 export default function Hero() {
   return (
@@ -9,8 +10,26 @@ export default function Hero() {
         <div className="space-y-4">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tighter relative">
             <span className="font-protest text-[#8364FF] block -mb-5 relative z-10">MOHAMED</span>
-            <span className="font-archivo text-[#C1FF00] font-black block relative z-0">DÉVELOPPEUR</span>
-            <span className="font-archivo text-[#C1FF00] font-black block relative z-0">WEB & MOBILE</span>
+            <HyperText 
+              text="DÉVELOPPEUR"
+              className="font-archivo text-[#C1FF00] font-black block relative z-0"
+              duration={1000}
+              framerProps={{
+                initial: { opacity: 0, y: 0 },
+                animate: { opacity: 1, y: 0 },
+                exit: { opacity: 0, y: 0 },
+              }}
+            />
+            <HyperText 
+              text="WEB & MOBILE"
+              className="font-archivo text-[#C1FF00] font-black block relative z-0"
+              duration={1000}
+              framerProps={{
+                initial: { opacity: 0, y: 0 },
+                animate: { opacity: 1, y: 0 },
+                exit: { opacity: 0, y: 0 },
+              }}
+            />
           </h1>
           <p className="text-lg text-gray-300">Transformez vos idées en applications innovantes</p>
         </div>
