@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion, Variants } from "framer-motion";
+import { AnimatePresence, motion, HTMLMotionProps } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 import { cn } from "@/lib/utils";
@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 interface HyperTextProps {
   text: string;
   duration?: number;
-  framerProps?: Variants;
+  framerProps?: HTMLMotionProps<"span">;
   className?: string;
   animateOnLoad?: boolean;
 }
@@ -24,6 +24,7 @@ export default function HyperText({
     initial: { opacity: 0, y: -10 },
     animate: { opacity: 1, y: 0 },
     exit: { opacity: 0, y: 3 },
+    transition: { duration: 0.6 },
   },
   className,
   animateOnLoad = true,

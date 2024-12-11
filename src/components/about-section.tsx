@@ -5,15 +5,18 @@
 import { FC } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
+import { Code2, Laptop, Database, Smartphone, Cloud, Users } from 'lucide-react'
 
-
-const TimelineItem: FC<{
+// Type pour les icônes
+type TimelineItemProps = {
   year: string
   title: string
   description: string
+  icon: React.ReactNode
   isLast?: boolean
-}> = ({ year, title, description, isLast }) => (
-  // Ajout de flex-1 et min-w-0 pour garantir une taille égale
+}
+
+const TimelineItem: FC<TimelineItemProps> = ({ year, title, description, icon, isLast }) => (
   <div className="relative flex-1 min-w-0">
     {!isLast && (
       <div className="absolute hidden xl:block top-4 left-[calc(50%+2rem)] w-[calc(100%-4rem)] h-px border-t-2 border-dashed border-[#8364FF]/30" />
@@ -28,10 +31,16 @@ const TimelineItem: FC<{
       transition={{ duration: 0.5 }}
       className="relative z-10 flex items-center gap-3 xl:flex-col xl:items-start"
     >
-      <div className="h-8 w-8 rounded bg-[#8364FF] p-2 xl:mx-auto">
-        <div className="h-full w-full rounded-sm bg-[#C1FF00]" />
+      <div className="relative h-8 w-8 xl:mx-auto">
+        {/* Carré violet externe */}
+        <div className="absolute inset-0 rounded bg-[#8364FF]" />
+        {/* Carré jaune interne avec l'icône */}
+        <div className="absolute inset-[4px] rounded-sm bg-[#C1FF00] flex items-center justify-center">
+          <div className="text-[#8364FF]">
+            {icon}
+          </div>
+        </div>
       </div>
-      {/* Ajout de h-full pour que la boîte prenne toute la hauteur disponible */}
       <div className="rounded-lg border-2 border-dashed border-[#8364FF] bg-black/50 p-4 xl:w-full xl:mt-4 h-full">
         <div className="font-archivo text-xl font-bold text-[#C1FF00]">{year}</div>
         <div className="font-protest font-medium text-white">{title}</div>
@@ -147,31 +156,37 @@ export default function AboutSection() {
             year="2018"
             title="Web Développement"
             description="J'ai commencé avec HTML, CSS et JavaScript, créant mes premiers sites web statiques."
+            icon={<Code2 size={14} />}
           />
           <TimelineItem
             year="2019"
             title="Frontend Development"
             description="Maîtrise de React.js et découverte des frameworks modernes."
+            icon={<Laptop size={14} />}
           />
           <TimelineItem
             year="2020"
             title="Full Stack Development"
             description="Apprentissage de Node.js et des BDD, développement d'applications complètes."
+            icon={<Database size={14} />}
           />
           <TimelineItem
             year="2021"
             title="Mobile Development"
             description="Spécialisation en React Native pour le développement d'applications mobiles."
+            icon={<Smartphone size={14} />}
           />
           <TimelineItem
             year="2022"
             title="Architecture & DevOps"
             description="Maîtrise des architectures cloud et des pratiques DevOps modernes."
+            icon={<Cloud size={16} />}
           />
           <TimelineItem
             year="2023"
             title="Leadership Technique"
             description="Direction d'équipes de développement et gestion de projets complexes."
+            icon={<Users size={16} />}
             isLast
           />
         </motion.div>

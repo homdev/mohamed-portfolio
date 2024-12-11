@@ -5,6 +5,10 @@ import { VelocityScroll } from "@/components/ui/scroll-based-velocity"
 import Portfolio from "@/components/portfolio-section"
 import ProcessSection from "@/components/process-section"
 import TestimonialsSection from "@/components/testimonials-section"
+import FAQSection from "@/components/faq-section"
+import Footer from "@/components/footer"
+import PackagesSection from "@/components/packages-section"
+
 export default function Home() {
   return (
     <main className="relative min-h-screen bg-transparent text-white overflow-hidden">
@@ -24,12 +28,17 @@ export default function Home() {
             className="font-archivo text-4xl md:text-5xl"
           />
         </div>
-
         <AboutSection />
         <Portfolio />
         <ProcessSection />
+        <PackagesSection />
         <TestimonialsSection />
+        <FAQSection />
+        <div className="mb-12">
+          <Footer />
+        </div>
       </div>
+
     </main>
   )
 }
